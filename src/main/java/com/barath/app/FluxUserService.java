@@ -20,25 +20,25 @@ public class FluxUserService {
     private static final Logger logger= LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
 
-    private Flux<User> createSingleUser(){
+    public Flux<User> createSingleUser(){
 
         return Flux.just(new User(1L,"barath",25));
 
     }
 
-    private Flux<User> createFluxOfUsers(){
+    public Flux<User> createFluxOfUsers(){
 
         return getFluxOfUsers();
     }
 
 
-    private Flux<String> getUserNames(){
+    public Flux<String> getUserNames(){
 
-        return getFluxOfUsers().map(user -> user.getUserName());
+        return getFluxOfUsers().map(user -> user.getUserName()).doOnNext( name -> System.out.println(" Name "+name));
     }
 
 
-    public Flux<User> getFluxOfUsers(){
+    private Flux<User> getFluxOfUsers(){
         return Flux.just( new User(1L,"barath",25),
                 new User(2L,"DHONI",35),
                 new User(3L,"SACHIN",45),
