@@ -8,11 +8,11 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.lang.invoke.MethodHandles;
+import java.time.Duration;
 
 /**
  * Created by barath.arivazhagan on 9/5/2017.
  */
-
 @Service
 public class FluxUserService {
 
@@ -48,6 +48,14 @@ public class FluxUserService {
         });
     }
 
+    public Flux<User> combineTwoFluxsIntoOne(){
+        return Flux.firstEmitting(firstSetOfUsers()).concatWith(secondSetOfUsers());
+    }
+
+    public Flux<User> getFasterFlux(){
+        return  firstSetOfUsers().firstEmittingWith(secondSetOfUsers());
+    }
+
 
     private Flux<User> getFluxOfUsers(){
         return Flux.just( new User(1L,"barath",25),
@@ -63,4 +71,24 @@ public class FluxUserService {
                 new User(11L,"SRINATH",50),
                 new User(12L,"SACHIN",45));
     }
+
+    private Flux<User>  firstSetOfUsers(){
+
+        return Flux.just( new User(1L,"RAMESH",24),
+                new User(2L,"SURESH",24),
+                new User(3L,"MAHESH",24));
+    }
+
+    private Flux<User> secondSetOfUsers(){
+
+        return Flux.just( new User(4L,"ROHINI",24),
+                new User(5L,"SAHINI",24),
+                new User(6L,"MAHINI",24));
+    }
+
+    private Flux<User> secondSetOfUsersWithDelay(){
+        return secondSetOfUsers().delayElements(Duration.ZERO);
+    }
+
+
 }

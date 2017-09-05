@@ -45,6 +45,14 @@ public class FluxUserController {
         return userService.getUsersBelowAge(age);
     }
 
+    @GetMapping(value="/concat")
+    public Flux<User>  concatTwoSets(){
+        return userService.combineTwoFluxsIntoOne();
+    }
 
+    @GetMapping(value="/firstEmit")
+    public Flux<User>  getFasterFlux(){
+        return userService.getFasterFlux();
+    }
 
 }
