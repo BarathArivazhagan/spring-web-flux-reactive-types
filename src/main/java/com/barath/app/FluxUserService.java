@@ -37,6 +37,17 @@ public class FluxUserService {
         return getFluxOfUsers().map(user -> user.getUserName()).doOnNext( name -> System.out.println(" Name "+name));
     }
 
+    public Flux<User> getUsersBelowAge(Long age){
+
+        return getFluxOfUsers().filter( user ->  {
+            if(user.getAge() < age ) {
+                return true;
+            }else{
+                return false;
+            }
+        });
+    }
+
 
     private Flux<User> getFluxOfUsers(){
         return Flux.just( new User(1L,"barath",25),

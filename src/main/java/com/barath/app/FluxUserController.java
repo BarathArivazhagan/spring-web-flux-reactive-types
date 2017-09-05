@@ -3,6 +3,7 @@ package com.barath.app;
 import com.barath.app.model.User;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
@@ -38,6 +39,12 @@ public class FluxUserController {
 
         return userService.getUserNames();
     }
+
+    @GetMapping(value = "/below/{age}")
+    public Flux<User> getUsersBelowAge(@PathVariable Long age){
+        return userService.getUsersBelowAge(age);
+    }
+
 
 
 }
