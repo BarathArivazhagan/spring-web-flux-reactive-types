@@ -50,6 +50,12 @@ public class FluxUserController {
         return userService.combineTwoFluxsIntoOne();
     }
 
+    @GetMapping(value="/merge")
+    public Flux<User>  mergeTwoSets(){
+        return Flux.empty();
+    }
+
+
     @GetMapping(value="/firstEmit")
     public Flux<User>  getFasterFlux(){
         return userService.getFasterFlux();

@@ -29,4 +29,10 @@ public class FluxController {
 
         return fluxService.combineTwoFlux();
     }
+
+    @GetMapping("/merge")
+    public Flux<String> mergeTwoFlux(){
+
+        return fluxService.mergeTwoFlux();
+    }
 }

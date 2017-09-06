@@ -34,14 +34,23 @@ public class FluxService {
        return Flux.concat(getFirstFlux()).concatWith(getSecondFlux());
     }
 
+    public Flux<String> mergeTwoFlux(){
+        return Flux.merge(getFirstFlux()).mergeWith(getSecondFlux());
+    }
+
 
     private Flux<String> getFirstFlux(){
 
-        return Flux.just("RAMESH,SURESH,MAHESH");
+        return Flux.just("RAMESH","SURESH","MAHESH");
     }
 
     private Flux<String> getSecondFlux(){
 
-        return Flux.just("BILL,HAYDEN,SMITH");
+        return Flux.just("BILL","HAYDEN","SMITH");
+    }
+
+    private Flux<String> getSecondFluxWithDuplicateValues(){
+
+        return Flux.just("BILL","HAYDEN","SMITH");
     }
 }
