@@ -2,6 +2,7 @@ package com.barath.app;
 
 
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.util.function.Tuple2;
 
@@ -47,6 +48,13 @@ public class MonoService {
 
     private Mono<Void> getSecondMono(){
         return Mono.empty();
+    }
+
+    private Mono<String> convertFluxToMono(){
+
+       Flux<String> stringFlux= Flux.just("SACHIN","DHONI","VIRAT");
+
+       return Mono.empty();
     }
 
 }

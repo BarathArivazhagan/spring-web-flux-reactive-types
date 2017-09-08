@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
+import java.util.Arrays;
+
 /**
  * Created by barath.arivazhagan on 9/5/2017.
  */
@@ -38,6 +40,14 @@ public class FluxService {
         return Flux.merge(getFirstFlux()).mergeWith(getSecondFlux());
     }
 
+
+    public Flux<String> fluxFromIterable(){
+        return Flux.fromIterable(Arrays.asList("BARATH","DHONI"));
+    }
+
+    public Flux<String> fluxFromArray(){
+        return Flux.fromArray( new String[]{"BARATH","DHONI"});
+    }
 
     private Flux<String> getFirstFlux(){
 

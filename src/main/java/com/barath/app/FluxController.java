@@ -35,4 +35,14 @@ public class FluxController {
 
         return fluxService.mergeTwoFlux();
     }
+
+    @GetMapping(value = "/fromArray")
+    public Flux<String> fromArray(){
+        return fluxService.fluxFromArray();
+    }
+
+    @GetMapping(value = "/fromIterable")
+    public Flux<String> fromIterable(){
+        return fluxService.fluxFromIterable();
+    }
 }
