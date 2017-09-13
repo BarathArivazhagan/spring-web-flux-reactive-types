@@ -3,6 +3,18 @@ This repository breaks down learning of reactive types such as Mono and Flux. Th
 
 ## Documentation:
 
+#### What is a Reactor ? 
+
+Reactor = single threaded event loop that receives and processes requests.
+
+#### What is Reactor Pattern ? 
+
+The reactor design pattern is an event handling pattern for handling service requests delivered concurrently to a service handler by one or more inputs. The service handler then demultiplexes the incoming requests and dispatches them synchronously to the associated request handlers.
+
+#### What is event loop ?
+
+
+
 
 ## REST endpoint mappings:
 
