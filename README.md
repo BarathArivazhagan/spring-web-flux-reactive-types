@@ -14,7 +14,59 @@ This repository breaks down learning of reactive types such as Mono and Flux. Th
     <th> Result </th>
   </tr>
   <tr>
+    <td>/flux/strings</td>
+    <td>returns flux of strings created using Flux.just()</td>
+    <td> "BARATH" </td>   
   </tr>
+  <tr>
+    <td>/flux/fromArray</td>
+    <td>returns flux of strings created using Flux.just()</td>
+    <td> "BARATH" </td>
+   <tr>
+     <td>/flux/concat</td>
+      <td>returns flux of strings created using Flux.just()</td>
+      <td> "BARATH" </td>
+   </tr>
+   <tr>  
+     <td>/flux/merge</td>
+    <td>returns flux of strings created using Flux.just()</td>
+    <td> "BARATH" </td>  
+   </tr>
+   <tr>
+     <td>/mono/string</td>
+     <td>returns flux of strings created using Flux.just()</td>
+     <td> "BARATH" </td>   
+   </tr>
+   <tr>
+    <td>/mono/string/delay</td>
+    <td>returns flux of strings created using Flux.just()</td>
+    <td> "BARATH" </td>
+   
+   </tr>
+   <tr>
+     <td>/mono/doOnNext</td>
+    <td>returns flux of strings created using Flux.just()</td>
+    <td> "BARATH" </td>   
+   </tr>
+   <tr>
+     <td>/mono/int</td>
+     <td>returns flux of strings created using Flux.just()</td>
+     <td> "BARATH" </td>   
+   </tr>
+   <tr>
+  
+    <td>/flux/user/one</td>
+    <td>returns flux of strings created using Flux.just()</td>
+    <td> "BARATH" </td>
+  </tr>
+  <tr>
+    <td>/flux/fromIterable</td>
+    <td>returns flux of strings created using Flux.just()</td>
+    <td> "BARATH" </td>
+  </tr>
+  
+  
+  
 
 </table>
 
