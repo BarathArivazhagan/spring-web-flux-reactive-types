@@ -22,6 +22,7 @@ This repository breaks down learning of reactive types such as Mono and Flux. Th
     <td>/flux/fromArray</td>
     <td>returns flux of strings created using Flux.just()</td>
     <td> "BARATH" </td>
+   </tr>
    <tr>
      <td>/flux/concat</td>
       <td>returns flux of strings created using Flux.just()</td>
@@ -53,8 +54,7 @@ This repository breaks down learning of reactive types such as Mono and Flux. Th
      <td>returns flux of strings created using Flux.just()</td>
      <td> "BARATH" </td>   
    </tr>
-   <tr>
-  
+   <tr>  
     <td>/flux/user/one</td>
     <td>returns flux of strings created using Flux.just()</td>
     <td> "BARATH" </td>
