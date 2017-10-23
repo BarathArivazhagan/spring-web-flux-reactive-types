@@ -52,6 +52,7 @@ public class FluxUserController {
 
     @GetMapping(value="/merge")
     public Flux<User>  mergeTwoSets(){
+    	
         return Flux.empty();
     }
 

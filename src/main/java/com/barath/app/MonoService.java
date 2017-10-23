@@ -27,6 +27,7 @@ public class MonoService {
 
 
     public Mono<String> createMonoWithOperatorOnNext(){
+    	
         return Mono.justOrEmpty("accenture").doOnNext( (name) -> System.out.println("name is "+name));
     }
 

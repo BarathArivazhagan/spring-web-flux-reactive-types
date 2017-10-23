@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-web-flux-reactive-types
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: barath.arivazhagan
+Implementation-Vendor-Id: com.barath.reactive.samples
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://projects.spring.io/spring-boot/spring-web-f
+ lux-reactive-types/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

@@ -33,7 +33,7 @@ public class FluxUserService {
 
 
     public Flux<String> getUserNames(){
-
+    		
         return getFluxOfUsers().map(user -> user.getUserName()).doOnNext( name -> System.out.println(" Name "+name));
     }
 
