@@ -37,7 +37,7 @@ The reactor design pattern is an event handling pattern for handling service req
    </tr>
    <tr>
      <td>/flux/concat</td>
-      <td>returns flux of strings created using Flux.just()</td>
+      <td>returns flux of strings created using Flux.concat()</td>
       <td> "BARATH" </td>
    </tr>
    <tr>  
@@ -47,7 +47,7 @@ The reactor design pattern is an event handling pattern for handling service req
    </tr>
    <tr>
      <td>/mono/string</td>
-     <td>returns flux of strings created using Flux.just()</td>
+     <td>returns mono of type string Mono.just()</td>
      <td> "BARATH" </td>   
    </tr>
    <tr>
@@ -58,7 +58,7 @@ The reactor design pattern is an event handling pattern for handling service req
    </tr>
    <tr>
      <td>/mono/doOnNext</td>
-    <td>returns flux of strings created using Flux.just()</td>
+    <td>returns flux of strings created using Mono.just().doOnNext()</td>
     <td> "BARATH" </td>   
    </tr>
    <tr>
