@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.lang.invoke.MethodHandles;
@@ -46,6 +47,11 @@ public class MonoController {
     public Mono<Integer> createMonoOfInteger(){
         return service.createMonoWithIntegerType();
 
+    }
+
+    @GetMapping(value = "/monotoflux")
+    public Flux<String> convertMonoToFlux(){
+        return service.convertMonoToFlux();
     }
 
 

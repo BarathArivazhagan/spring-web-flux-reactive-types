@@ -51,11 +51,9 @@ public class MonoService {
         return Mono.empty();
     }
 
-    private Mono<String> convertFluxToMono(){
+    public Flux<String> convertMonoToFlux(){
 
-       Flux<String> stringFlux= Flux.just("SACHIN","DHONI","VIRAT");
-
-       return Mono.empty();
+       return Mono.justOrEmpty("Barath").flux();
     }
 
 }
