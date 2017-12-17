@@ -39,13 +39,7 @@ public class FluxUserService {
 
     public Flux<User> getUsersBelowAge(Long age){
 
-        return getFluxOfUsers().filter( user ->  {
-            if(user.getAge() < age ) {
-                return true;
-            }else{
-                return false;
-            }
-        });
+        return getFluxOfUsers().filter( user -> user.getAge() < age);
     }
 
     public Flux<User> combineTwoFluxsIntoOne(){
