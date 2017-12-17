@@ -63,18 +63,20 @@ The reactor design pattern is an event handling pattern for handling service req
    <tr>
      <td>/mono/doOnNext</td>
     <td>returns flux of strings created using Mono.just().doOnNext()</td>
+    <td>  Mono.justOrEmpty("company").doOnNext() </td>   
     <td> "BARATH" </td>   
    </tr>
    <tr>
      <td>/mono/int</td>
-     <td>returns flux of strings created using Flux.just()</td>
-     <td> "BARATH" </td>   
+     <td>returns flux of strings created using Mono.just()</td>
+     <td> Mono.just(1)</td>  
+     <td> 1 </td>   
    </tr>
    <tr>  
     <td>/flux/user/one</td>
     <td>returns flux of one user created using Flux.just()</td>
     <td> Flux.just(new User(1L,"barath",25)</td>
-    <td> "BARATH" </td>
+    <td> [{"userId":1,"userName":"barath","age":25}] </td>
   </tr>
    <tr>  
     <td>/flux/user/many</td>
