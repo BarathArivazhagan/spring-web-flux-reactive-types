@@ -23,16 +23,19 @@ The reactor design pattern is an event handling pattern for handling service req
   <tr>
     <th> Endpoint </th>
     <th> Description </th>
+    <th> Usage </th>
     <th> Result </th>
   </tr>
   <tr>
     <td>/flux/strings</td>
     <td>returns flux of strings created using Flux.just()</td>
-    <td> "BARATH" </td>   
+    <td>Flux.just("DHONI","SACHIN","VIRAT")</td>
+    <td> "DHONISACHINVIRAT" </td>   
   </tr>
   <tr>
     <td>/flux/fromArray</td>
     <td>returns flux of strings created using Flux.just()</td>
+    <td>AMESHSURESHMAHESHBILLHAYDENSMITH</td>
     <td> "BARATH" </td>
    </tr>
    <tr>
@@ -75,6 +78,13 @@ The reactor design pattern is an event handling pattern for handling service req
     <td>/flux/fromIterable</td>
     <td>returns flux of strings created using Flux.just()</td>
     <td> "BARATH" </td>
+  </tr>
+  
+  <tr>
+    <td>/mono/user</td>
+    <td>returns mono of user using Mono.just(new User())</td>
+  <td>Mono.just(new User(1L,"barath",26))</td>
+    <td> {"userId":1,"userName":"barath","age":26} </td>
   </tr>
   
   
