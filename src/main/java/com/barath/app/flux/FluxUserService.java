@@ -56,6 +56,13 @@ public class FluxUserService {
         return  firstSetOfUsers().firstEmittingWith(secondSetOfUsers());
     }
 
+    public Flux<User> zipUsers(){
+
+        Flux<String> userNames=Flux.just("BARATH","DHONI","SACHIN");
+        Flux<Integer> userAges=Flux.just(25,34,40);
+        Flux<Long> userIds=Flux.just(1L,2L,3L);
+        return Flux.zip(userIds,userNames,userAges).map( pair -> new User(pair.getT1(),pair.getT2(),pair.getT3()));
+    }
 
     private Flux<User> getFluxOfUsers(){
         return Flux.just( new User(1L,"barath",25),

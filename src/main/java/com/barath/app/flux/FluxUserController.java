@@ -62,4 +62,9 @@ public class FluxUserController {
         return userService.getFasterFlux();
     }
 
+    @GetMapping(value="/zip")
+    public Flux<User>  getZippedUsers(){
+        return userService.zipUsers();
+    }
+
 }
