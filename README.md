@@ -72,12 +72,20 @@ The reactor design pattern is an event handling pattern for handling service req
    </tr>
    <tr>  
     <td>/flux/user/one</td>
-    <td>returns flux of strings created using Flux.just()</td>
+    <td>returns flux of one user created using Flux.just()</td>
+    <td> Flux.just(new User(1L,"barath",25)</td>
+    <td> "BARATH" </td>
+  </tr>
+   <tr>  
+    <td>/flux/user/many</td>
+    <td>returns flux of many users created using Flux.just()</td>
+    <td> Flux.just(new User(1L,"barath",25),new User(2L,"someotherbarath",25))</td>
     <td> "BARATH" </td>
   </tr>
   <tr>
     <td>/flux/fromIterable</td>
     <td>returns flux of strings created using Flux.fromIterable()</td>
+  <td>Flux.fromArray( new String[]{"BARATH","DHONI"}</td>
     <td> "BARATH" </td>
   </tr>
   
@@ -113,5 +121,5 @@ The reactor design pattern is an event handling pattern for handling service req
 
 References: 
 
-http://musigma.org/java/2016/11/21/reactor.html
-http://javasampleapproach.com/reactive-programming/reactor/reactor-how-to-combine-flux-mono-reactive-programming
+* http://musigma.org/java/2016/11/21/reactor.html
+* http://javasampleapproach.com/reactive-programming/reactor/reactor-how-to-combine-flux-mono-reactive-programming
