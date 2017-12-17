@@ -19,7 +19,7 @@ public class MonoUserController {
         this.monoUserService=monoUserService;
     }
 
-    @GetMapping("/mono")
+    @GetMapping("/")
     public Mono<User> getMonoUser(){
 
         return monoUserService.getMonoUser();
