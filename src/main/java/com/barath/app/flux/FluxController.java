@@ -45,4 +45,10 @@ public class FluxController {
     public Flux<String> fromIterable(){
         return fluxService.fluxFromIterable();
     }
+
+    @GetMapping(value = "/doOnError")
+    public Flux<String> handleFluxWithError(){
+        return fluxService.handleFluxWithError();
+
+    }
 }

@@ -42,6 +42,12 @@ public class MonoController {
 
     }
 
+    @GetMapping(value="/doOnError")
+    public Mono<String> handleMonoWithError(){
+        return service.handleMonoWithError();
+
+    }
+
 
     @GetMapping(value="/int")
     public Mono<Integer> createMonoOfInteger(){

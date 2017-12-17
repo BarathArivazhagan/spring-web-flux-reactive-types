@@ -49,6 +49,19 @@ public class FluxService {
         return Flux.fromArray( new String[]{"BARATH","DHONI"});
     }
 
+    public Flux<String> handleFluxWithError(){
+
+        return Flux.fromArray( new String[]{"BARATH","DHONI"}).doOnNext( name -> {
+
+            System.out.println("name received "+name);
+            if("BARATH".equals(name)){
+                throw new RuntimeException("throw custom forced exception");
+            }
+        }).doOnError( error -> {
+            System.out.println("Error occured "+error.getMessage());
+        }).onErrorReturn("ERROR BARATH");
+    }
+
     private Flux<String> getFirstFlux(){
 
         return Flux.just("RAMESH","SURESH","MAHESH");
