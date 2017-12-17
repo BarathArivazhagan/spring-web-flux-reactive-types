@@ -79,8 +79,8 @@ The reactor design pattern is an event handling pattern for handling service req
    <tr>  
     <td>/flux/user/many</td>
     <td>returns flux of many users created using Flux.just()</td>
-    <td> Flux.just(new User(1L,"barath",25),new User(2L,"someotherbarath",25))</td>
-    <td> "BARATH" </td>
+    <td> Flux.just(new User(1L,"barath",25),...)</td>
+    <td> [{"userId":1,"userName":"barath","age":25},{"userId":2,"userName":"DHONI","age":35},{"userId":3,"userName":"SACHIN","age":45},{"userId":4,"userName":"VIRAT","age":28},{"userId":5,"userName":"ROHIT","age":30},{"userId":6,"userName":"DHAWAN","age":28},{"userId":7,"userName":"KUMBLE","age":42},{"userId":8,"userName":"JOSHI","age":46},{"userId":9,"userName":"GAVASKAR","age":65},{"userId":10,"userName":"KAPILDEV","age":55},{"userId":11,"userName":"SRINATH","age":50},{"userId":12,"userName":"SACHIN","age":45}]</td>
   </tr>
   <tr>
     <td>/flux/fromIterable</td>
