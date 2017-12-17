@@ -1,4 +1,4 @@
-package com.barath.app;
+package com.barath.app.flux;
 
 import com.barath.app.model.User;
 import org.slf4j.Logger;

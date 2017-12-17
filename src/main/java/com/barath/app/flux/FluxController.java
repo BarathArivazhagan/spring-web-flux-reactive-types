@@ -1,4 +1,4 @@
-package com.barath.app;
+package com.barath.app.flux;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
