@@ -43,12 +43,10 @@ public class FluxUserService {
     }
 
     public Flux<User> combineTwoFluxsIntoOne(){
-        return Flux.firstEmitting(firstSetOfUsers()).concatWith(secondSetOfUsers());
+        return Flux.first(firstSetOfUsers()).concatWith(secondSetOfUsers());
     }
 
-    public Flux<User> getFasterFlux(){
-        return  firstSetOfUsers().firstEmittingWith(secondSetOfUsers());
-    }
+
 
     public Flux<User> zipUsers(){
 

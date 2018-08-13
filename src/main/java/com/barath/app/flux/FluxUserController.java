@@ -16,7 +16,7 @@ import reactor.core.publisher.Flux;
 public class FluxUserController {
 
 
-    private FluxUserService userService;
+    private final FluxUserService userService;
 
     public FluxUserController(FluxUserService userService){
         this.userService=userService;
@@ -56,11 +56,6 @@ public class FluxUserController {
         return Flux.empty();
     }
 
-
-    @GetMapping(value="/firstEmit")
-    public Flux<User>  getFasterFlux(){
-        return userService.getFasterFlux();
-    }
 
     @GetMapping(value="/zip")
     public Flux<User>  getZippedUsers(){

@@ -31,7 +31,7 @@ public class MonoService {
 
     public Mono<String> createMonoWithOperatorOnNext(){
     	
-        return Mono.justOrEmpty("company").doOnNext( (name) -> System.out.println("name is "+name));
+        return Mono.justOrEmpty("company");
     }
 
     public Mono<Integer> createMonoWithIntegerType(){

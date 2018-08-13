@@ -19,7 +19,7 @@ public class MonoController {
 
     private static final Logger logger= LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    private MonoService service;
+    private final MonoService service;
 
     public MonoController(MonoService service){
         this.service=service;
