@@ -55,7 +55,7 @@ public class MonoController {
 
     }
 
-    @GetMapping(value = "/monotoflux")
+    @GetMapping(value = "/toFlux")
     public Flux<String> convertMonoToFlux(){
         return service.convertMonoToFlux();
     }
