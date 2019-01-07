@@ -1,13 +1,13 @@
 package com.barath.app.flux;
 
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Flux;
-
 import java.util.Arrays;
 
+import org.springframework.stereotype.Service;
+
+import reactor.core.publisher.Flux;
+
 /**
- * Created by barath.arivazhagan on 9/5/2017.
+ * @author barath
  */
 @Service
 public class FluxService {

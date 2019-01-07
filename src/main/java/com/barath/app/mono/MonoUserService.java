@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 import java.lang.invoke.MethodHandles;
+import java.util.function.Function;
 
 /**
- * Created by barath.arivazhagan on 9/5/2017.
+ * @author barath
  */
 @Service
 public class MonoUserService {
@@ -20,10 +21,28 @@ public class MonoUserService {
         return  Mono.just(new User(1L,"barath",26));
     }
 
-    public Mono<User> operatorOnUser(Mono<User> user){
+    public Mono<User> operatorOnUser(Mono<User> userMono){
 
-        return user.log().doOnNext( user1 -> {
-            logger.info("user name {}",user1.getUserName());
+        return userMono.log().doOnNext( user -> {
+            logger.info("user name {}",user.getUserName());
         });
     }
+    
+    public Mono<User> operateOnUserName(Mono<User> userMono){
+    	
+    	return userMono.map( user -> {
+    		user.setUserName(user.getUserName().toUpperCase());
+    		return user;
+    	});
+    }
+    
+    public Mono<User> convertUserNameToUpperCase(Mono<User> userMono){
+
+        return userMono.zipWith(userMono.map(user -> user.getUserName().toUpperCase()), (user, s) -> new User(user.getUserId(),s,user.getAge()));
+
+    }
+
+
+     
+
 }

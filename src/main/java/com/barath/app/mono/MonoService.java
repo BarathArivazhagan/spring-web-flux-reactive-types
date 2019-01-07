@@ -1,24 +1,24 @@
 package com.barath.app.mono;
 
 
-import org.reactivestreams.Publisher;
-import org.reactivestreams.Subscriber;
-import org.springframework.stereotype.Service;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-import reactor.util.function.Tuple2;
-
+import java.lang.invoke.MethodHandles;
 import java.time.Duration;
 import java.util.concurrent.Callable;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
 /**
- * Created by barath.arivazhagan on 9/5/2017.
+ * @author barath
  */
 @Service
 public class MonoService {
 
-
-
+    private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     public Mono<String> createMonoOfString(){
        return   Mono.just("barath");
@@ -52,9 +52,9 @@ public class MonoService {
 
                 }
             }).doOnError( error -> {
-                System.out.println("Error occured "+error.getMessage());
+                logger.error("Error occured {}",error.getMessage());
             }).doOnNext( element -> {
-                System.out.println("Success ");
+                logger.info("Success ");
             });
     }
 
